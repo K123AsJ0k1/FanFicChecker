@@ -1,0 +1,10 @@
+Fanfic_E
+fictionpress01
+venv
+.env
+__pycache__
+*.csv
+*.txt
+preprocess
+backend
+test.py
