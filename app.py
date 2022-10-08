@@ -13,3 +13,6 @@ def model():
 @app.route("/")
 def serve():
     return send_from_directory(app.static_folder, 'index.html')
+
+if __name__ == '_main_':
+    app.run()
