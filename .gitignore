@@ -4,7 +4,6 @@ venv
 .env
 __pycache__
 *.csv
-*.txt
 preprocess
 backend
 test.py
