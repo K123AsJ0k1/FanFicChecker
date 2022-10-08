@@ -1,0 +1,2 @@
+.wrapper,body,html{height:100%;margin:0}.header,.wrapper{display:flex;flex-direction:column}.header{background-color:gold}.main{align-self:center}.form,.main{display:flex;flex-direction:column}.form{align-items:center}.formButton{background-color:#dcdcdc;height:10vh;margin-top:2vh;width:22vw}.formTextBox{display:flex;height:500px;margin-top:2vh;resize:none;width:40vw}.title{align-items:center;color:violet;display:flex;flex-direction:column}.result{align-self:center;display:flex;margin-top:2vh}
+/*# sourceMappingURL=main.e30b8328.css.map*/
