@@ -3,7 +3,6 @@ fictionpress01
 venv
 .env
 __pycache__
-*.csv
 preprocess
 backend
 test.py

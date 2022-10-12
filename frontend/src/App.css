@@ -8,12 +8,13 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  background-color:#333;
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  background-color: gold;
+  background-color: #212121
 }
 
 .main {
@@ -31,7 +32,7 @@ body {
 .formButton {
   width: 22vw;
   height: 10vh;
-  background-color: gainsboro;
+  background-color: #AAAA;
   margin-top: 2vh;
 }
 
@@ -41,17 +42,20 @@ body {
   width: 40vw;
   height: 500px;
   resize: none;
+  background-color:darkgray;
+  color: white;
 }
 
 .title {
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: violet;
+  color: #AAAAAA;
 }
 
 .result {
   display: flex;
   align-self: center;
   margin-top: 2vh;
+  color: #AAAAAA;
 }
