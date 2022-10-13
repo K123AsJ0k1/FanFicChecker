@@ -9,7 +9,7 @@ app = Flask(__name__,static_folder='./frontend/build',static_url_path='')
 #app = Flask(__name__)
 rating_model = pickle.load(open('./new_rating_model.pkl', 'rb'))
 category_model = pickle.load(open('./categories_model_27_correct_index.pkl', 'rb'))
-CORS(app)
+#CORS(app)
 
 def create_dict():
     label_csv = open('Word_labels.csv', 'r')
