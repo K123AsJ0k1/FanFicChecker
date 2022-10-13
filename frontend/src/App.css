@@ -56,12 +56,11 @@ body {
 .result {
   display: flex;
   flex-direction: column;
-
+  align-items: center;
 }
 
 .rating {
   display: flex;
-  align-self: center;
   margin-top: 2vh;
   color: #AAAAAA;
   margin-bottom: 2vh;
