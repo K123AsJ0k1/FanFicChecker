@@ -16,7 +16,7 @@ const Form = ({setData}) => {
   return(
     <div>
       <form onSubmit={checkText} className='form'>
-        <button id="create-button" type="submit" className='formButton'>Copy your text and click this!</button>
+        <button id="create-button" type="submit" className='formButton'>Give predictions</button>
         <div>
           <textarea
             id="text"
