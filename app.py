@@ -68,9 +68,16 @@ def modelPredict(text):
         c_dist = category_model.predict_proba(X)
         category_dist = list(c_dist[0])
         #print(category_dist)
+        #print(category_dist)
         min = np.median(np.array(category_dist))
+        #min = 0
         radar_dist = 5*(category_dist-min)/(max(category_dist)-min)
+        #radar_dist = (category_dist)/(max(category_dist))
+        #radar_dist = np.array(radar_dist)
+        #radar_dist = 5*radar_dist
         #print(radar_dist)
+        #print(type(radar_dist))
+        #print(len(radar_dist))
         li = []
         for i in range(len(radar_dist)):
             li.append([radar_dist[i],i])
@@ -116,6 +123,7 @@ def modelPredict(text):
             'c_top_6_d': category_top_6_dist
             }
     except Exception as e:
+        #print(e)
         return {
             'status': 204, 
             'rating': 'T', 

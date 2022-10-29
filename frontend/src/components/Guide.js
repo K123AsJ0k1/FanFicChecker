@@ -3,19 +3,17 @@ const Guide = () => {
         <div className='text'>
             <h2>Rating</h2>
             <p>
-                The possible ratings are K (ages 5-7), 
-                K+ (ages 8-12), T (13-17) and M (18+).
+                The ratings are K (ages 5-7), 
+                K+ (ages 8-12), T (13-17), 
+                and M (18+).
             </p>
             <h2>Categories</h2>
             <p>
-                The possible categories are Action, 
-                Biography, Fable, Family, Fantasy, 
-                Friendship, Historical, Horror, 
-                Humor, Kids, Life, Love, Manga, 
-                Mystery, Mythology, Nature, Play, 
-                Politics, Religion, Romance, School, 
-                Sci-Fi, Spiritual, Supernatural, Thriller, 
-                War and Young Adult.
+                The pointiness of the shape 
+                in the radar chart indicates 
+                certainty in the result. Strong 
+                predictions are spiky and uncertain 
+                predictions are round in shape.  
             </p>
         </div>
     )

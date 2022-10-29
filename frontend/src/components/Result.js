@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const Result = ({data}) => {
     const [visible, setVisible] = useState(false)
-    
+    //console.log(data)
     if (data) {
         if (data['status'] === 200) { 
             return (
@@ -13,6 +13,9 @@ const Result = ({data}) => {
                     { !visible && <button className='formButton' onClick={() => setVisible(true)}>Show interperation guide</button> }
                     { visible && <button className='formButton' onClick={() => setVisible(false)}>Hide interperation guide</button> }
                     { visible && <Guide/>}
+                    <h2 className='text'>
+                        Predictions
+                    </h2>
                     <div className='textResult'>
                         Rating:{data.rating}
                     </div>
@@ -22,19 +25,32 @@ const Result = ({data}) => {
                         r: data['c_top_6_d'],
                         theta: data['c_top_6_l'],
                         fill: 'toself',
-                        marker : { color : '#B80102'}
+                        marker : {color : '#333'}
                     }]}
-                    layout={{plot_bgcolor:"rgb(169,169,169)",paper_bgcolor:"rgb(169,169,169)",width: 500, height: 500, polar: {radialaxis: {visible: true,range: [0, 5]}},showlegend: false,title:"Top 6 predicted categories"}}
+                    layout={{
+                            paper_bgcolor:"rgb(51,51,51)",
+                            width: 750, 
+                            height: 650, 
+                            polar: {bgcolor:'rgb(169,169,169)',radialaxis: {visible: true, range: [0, 5], color:"white"}},
+                            showlegend: false,
+                            title:"Top 6 categories",
+                            titlefont: {size:18,color: '#AAAAAA'},
+                            font: {size:18, color: '#AAAAAA'},
+                        }}
                     />
                 </div>
             );
+            //fillcolor: 'red'
+            //template:{color:'red'}
+            //plot_bgcolor:"rgb(51,51,51)",
+            //font:{family:'Arial',size:18, color:'red'}
         }
 
         return (
             <div className='results'>
                 <div className='textResult'>
-                    Prediction failed, please give 
-                    a text with more common words.
+                    Prediction too vague, please give 
+                    more general words.
                 </div>
             </div>
         )

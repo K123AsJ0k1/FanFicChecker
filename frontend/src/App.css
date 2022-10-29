@@ -43,6 +43,7 @@ body {
   height: 10vh;
   background-color: #AAAA;
   margin-top: 2vh;
+  color: white;
 }
 
 .formTextBox {
@@ -59,7 +60,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: #AAAAAA;
+  color: white;
 }
 
 .results  {
@@ -70,8 +71,8 @@ body {
 
 .textResult {
   display: flex;
-  margin-top: 2vh;
+  margin-top: 1vh;
   color: #AAAAAA;
-  margin-bottom: 2vh;
   align-self: center;
+  font-size: 20px;
 }
