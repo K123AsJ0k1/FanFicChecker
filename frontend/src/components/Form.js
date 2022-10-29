@@ -9,7 +9,6 @@ const Form = ({setData}) => {
     event.preventDefault()
     api.sendData({ text: text }).then(data => {
         setData(data)
-        //console.log(data)
     })
   }
 

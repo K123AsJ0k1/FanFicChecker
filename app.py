@@ -5,8 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 import numpy as np
 import pandas as pd
 import pickle
-#app = Flask(__name__,static_folder='./frontend/build',static_url_path='')
-app = Flask(__name__)
+app = Flask(__name__,static_folder='./frontend/build',static_url_path='')
 rating_model = pickle.load(open('./new_rating_model.pkl', 'rb'))
 category_model = pickle.load(open('./categories_model_27_correct_index.pkl', 'rb'))
 CORS(app)
@@ -67,28 +66,21 @@ def modelPredict(text):
         
         c_dist = category_model.predict_proba(X)
         category_dist = list(c_dist[0])
-        #print(category_dist)
-        #print(category_dist)
+        
         min = np.median(np.array(category_dist))
-        #min = 0
         radar_dist = 5*(category_dist-min)/(max(category_dist)-min)
-        #radar_dist = (category_dist)/(max(category_dist))
-        #radar_dist = np.array(radar_dist)
-        #radar_dist = 5*radar_dist
-        #print(radar_dist)
-        #print(type(radar_dist))
-        #print(len(radar_dist))
+        
         li = []
         for i in range(len(radar_dist)):
             li.append([radar_dist[i],i])
+        
         li.sort()
-        #print(li)
         sort_index = []
         for x in li:
             sort_index.append(x[1])
-        #print(sort_index)
+        
         category_top_6_index = sort_index[21:28]
-        #print(category_top_6_index)
+        
         category_top_6_index.sort()
         
         category_top_6_labels = []
@@ -97,11 +89,8 @@ def modelPredict(text):
 
         category_top_6_dist = []
         for x in category_top_6_index:
-            # round(5.76543, 2)
             category_top_6_dist.append(round(radar_dist[x],3))
-        #print(category_top_6_labels)
-        #print(category_top_6_index)
-        #print(category_top_6_dist)
+        
         rating_dist = list(r_dist[0])
         rating_value = int(rating_prediction[0])
 
@@ -123,7 +112,6 @@ def modelPredict(text):
             'c_top_6_d': category_top_6_dist
             }
     except Exception as e:
-        #print(e)
         return {
             'status': 204, 
             'rating': 'T', 
@@ -132,15 +120,15 @@ def modelPredict(text):
             'c_top_6_d': [0, 0, 0, 0, 0, 0]
             }
 
-#@cross_origin()
+@cross_origin()
 @app.route("/api/model", methods=["get","post"])
 def apiModel():
     data = request.json
     return jsonify(modelPredict(data['text'])) 
     
-#@app.route("/")
-#def serve():
-#    return send_from_directory(app.static_folder, 'index.html')
+@app.route("/")
+def serve():
+    return send_from_directory(app.static_folder, 'index.html')
 
 if __name__ == '_main_':
     app.run()

@@ -1,6 +1,5 @@
 import '../App.css'
 import Form from "./Form"
-//import Header from './Header'
 import Result from './Result'
 import Welcome from './Welcome'
 import { useState } from 'react'

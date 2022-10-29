@@ -1,3 +1,5 @@
+import '../App.css'
+
 const Guide = () => {
     return (
         <div className='text'>

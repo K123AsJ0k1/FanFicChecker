@@ -5,7 +5,6 @@ import { useState } from 'react'
 
 const Result = ({data}) => {
     const [visible, setVisible] = useState(false)
-    //console.log(data)
     if (data) {
         if (data['status'] === 200) { 
             return (
@@ -40,10 +39,6 @@ const Result = ({data}) => {
                     />
                 </div>
             );
-            //fillcolor: 'red'
-            //template:{color:'red'}
-            //plot_bgcolor:"rgb(51,51,51)",
-            //font:{family:'Arial',size:18, color:'red'}
         }
 
         return (
